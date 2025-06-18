@@ -46,7 +46,7 @@ const{name,value}=event.target;
       if (!validate()) return;
 
     try {
-      const res = await axios.post("http://localhost:5000/api/users/register", formData);
+      const res = await axios.post("https://full-stack-j0as.onrender.com/api/users/register", formData);
       alert(res.data.message);
       setFormData({ name: "", email: "" }); // Reset form
       setErrors({});
