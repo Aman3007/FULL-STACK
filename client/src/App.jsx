@@ -3,7 +3,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Main } from "./componenrts/Main";
 import { Home } from "./componenrts/Home";
-import { About } from "./componenrts/About";
+// import { About } from "./componenrts/About";
 import Login from "./componenrts/Login";
 import Register from "./componenrts/Register";
 import "./App.css"
@@ -16,10 +16,11 @@ const router = createBrowserRouter([{
   children:[{
      path:"/",
   element:<Home></Home>,
-  },{
-     path:"/about",
-  element:<About></About>,
-  }
+  },
+    // ,{
+  //    path:"/about",
+  // element:<About></About>,
+  // }
 ,{
    path:"/login",
   element:<Login></Login>,
