@@ -4,8 +4,9 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "start": "node app.js",
-    "build": "cd ../client && npm install && npm run build"
+  "server": "node app.js",
+  "client": "npm run dev --prefix ../client",
+  "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],
   "author": "",
