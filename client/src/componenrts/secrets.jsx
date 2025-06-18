@@ -26,7 +26,7 @@ const handleSubmit = async (e) => {
       
 
     try {
-      const res = await axios.post("http://localhost:5000/api/users/mysecrets",{formData,user } );
+      const res = await axios.post("https://full-stack-j0as.onrender.com/api/users/mysecrets",{formData,user } );
       console.log(res.data.secrets)
      setSecretData(res.data.secrets);
       setFormData({ secrets: ""}); // Reset form
