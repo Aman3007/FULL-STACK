@@ -27,7 +27,7 @@ app.use(verifyAuthenticationToken)
 import userRoutes from "./Routes/auth-routes.js"
 // Enable CORS for all routes
 app.use(cors({
-  origin: "http://localhost:5173", // Only allow React dev server
+  origin: "https://my-whisper-app.onrender.com", // Only allow React dev server
   methods: ["GET", "POST","PUT","DELETE"],        // Allowed HTTP methods
   credentials: true                // Allow cookies/auth headers if needed
 }));
