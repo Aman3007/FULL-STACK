@@ -26,7 +26,7 @@ const createUser = async (req, res) => {
           Email: email
         });
         newUser.save();
-
+             res.send({ message: "Registerd succesfully you can now login" })
       }
     }
 
