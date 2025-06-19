@@ -15,7 +15,7 @@ app.use(express.static("public"))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cookieparser()); 
 app.use(express.json());
-app.use(verifyAuthenticationToken)
+
 
 
 
