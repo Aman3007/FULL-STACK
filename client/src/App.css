@@ -504,4 +504,6 @@ justify-content: center;
 .card:hover .front-content p {
   opacity: 0;
 }
-
+.logout{
+  margin-top: 3rem;
+}
