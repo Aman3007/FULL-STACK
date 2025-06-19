@@ -26,7 +26,8 @@ const createUser = async (req, res) => {
           Email: email
         });
         newUser.save();
-             res.send({ message: "Registerd succesfully you can now login" })
+          res.send({ message: "Registerd succesfully you can now login" })
+
       }
     }
 
@@ -92,7 +93,13 @@ export const checkUser = async (req, res) => {
   }
 };
 
+export const protectedpage=async(req,res)=>{
+  res.status(200).json({ msg: "Welcome to the protected route", user: req.user });
+}
 
+export const secretpage=async(req,res)=>{
+  res.status(200).json({ msg: "Welcome to secret page", user: req.user });
+}
 export const addsecrets=async(req,res)=>{
  const { formData, user } = req.body;
    try {
@@ -129,6 +136,25 @@ export const showuser = async (req, res) => {
     res.status(500).json({ error: "Failed to fetch users" });
   }
 };
+
+
+
+ export const deletecookies=async(req,res)=>{
+  try {
+    res.clearCookie("access_token", {
+    httpOnly: true,
+    secure: false, 
+    sameSite: "Lax",
+  });
+
+  res.status(200).json({ message: "Logged out successfully" });
+  } catch (error) {
+    console.log(error)
+    res.send({message:"error occured"})
+  }
+ 
+
+}
 export default createUser;
 
 
