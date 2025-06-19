@@ -50,7 +50,10 @@ const{name,value}=event.target;
       if (!validate()) return;
 
     try {
-      const res=await axios.post("https://full-stack-j0as.onrender.com/api/users/login", formData)
+      const res=await axios.post("https://full-stack-j0as.onrender.com/api/users/login", formData,{
+        withCredentials:true
+      })
+
      const { message, user, token } = res.data;
       
   if (user && token) {
