@@ -13,7 +13,7 @@ const navigate = useNavigate();
 useEffect(() => {
     const checkAuth = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/users/mysecrets", {
+        const res = await axios.get("https://full-stack-j0as.onrender.com/api/users/mysecrets", {
           withCredentials: true,
         });
 
