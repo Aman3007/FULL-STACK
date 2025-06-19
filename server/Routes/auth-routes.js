@@ -1,12 +1,15 @@
 import express from "express"
 const router = express.Router();
-import createUser, { addsecrets, checkUser, showuser } from "../controllers/events.js"
-
+import createUser, { addsecrets, checkUser, deletecookies, protectedpage, secretpage, showuser } from "../controllers/events.js"
+import { verifyAuthenticationToken } from "../middleware/auth-niddelware.js";
 router.post("/register", createUser);
 router.post("/login", checkUser);
-router.post("/mysecrets", addsecrets);
+router.get("/myhome",verifyAuthenticationToken, protectedpage);
 
+router.post("/mysecrets", addsecrets);
+router.get("/mysecrets", verifyAuthenticationToken,secretpage);
 router.get("/data",showuser)
+router.post("/logout",deletecookies)
 
 
 export default router;
