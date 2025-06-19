@@ -1,12 +1,36 @@
  import { useLocation } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 function Secrets() {
 const { user, token } = useLocation().state|| {};
 const [formData, setFormData] = useState({ secrets: ""});
+ const [authorized, setAuthorized] = useState(false);
 const [secretData, setSecretData] = useState(["Your secret"]);
+const navigate = useNavigate();
+
+useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const res = await axios.get("http://localhost:5000/api/users/mysecrets", {
+          withCredentials: true,
+        });
+
+        if (res.status === 200) {
+          setAuthorized(true);
+      
+        }
+      } catch (err) {
+        alert("You are not logged in!");
+        navigate("/");
+      }
+    };
+
+    checkAuth();
+  }, []);
+
+
 
        const handleChange=(event)=>{
 
@@ -37,8 +61,25 @@ const handleSubmit = async (e) => {
     }
   };
 
-  if (!user) return <p>No user info available.</p>;
+ const handlelogout = async () => {
+     try {
+      const res = await axios.post("https://full-stack-j0as.onrender.com/api/users/logout", {}, {
+        withCredentials: true,
+      });
 
+      if (res.status === 200 && res.data.message === "Logged out successfully") {
+        navigate("/");
+      }
+    } catch (err) {
+      console.error("Logout failed:", err);
+      alert("Failed to logout. Try again.");
+    }
+  }
+
+
+
+
+if (!authorized) return null;
   return (
     <>
 
@@ -81,6 +122,9 @@ const handleSubmit = async (e) => {
       ></textarea>
       <button class="add-btn"  type="submit">Add</button>
     </form>
+     <button className="logout" onClick={handlelogout} >
+Log-out
+  </button>
   </div>
 </div>
 </div>
