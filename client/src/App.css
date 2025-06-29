@@ -1,3 +1,15 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  overflow-x: hidden;
+  
+}
+
 .navrow{
   display: flex;
   flex-direction: row;
@@ -29,10 +41,11 @@ text-decoration: none;
 
 #footer{
     border-top: 2px solid rgb(250, 6, 6);
-  padding: 2.5rem;
+  padding: 2rem;
   display: flex;
   flex-direction: row;
-  position: relative;
+  align-items: center;
+  justify-content: center;
   bottom: 0;
   gap: 3rem;
  
@@ -43,18 +56,18 @@ background: linear-gradient(16deg, rgb(14, 13, 13) 0%, rgb(8, 8, 8) 100%);
 #footer div{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
 }
 #footer div p {
+  
   color: white;
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-decoration: none;
 }
 #footer div p a{
-padding-left: 4rem;
+
   color: white;
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-decoration: none;
   
 }
@@ -504,6 +517,74 @@ justify-content: center;
 .card:hover .front-content p {
   opacity: 0;
 }
+
+/* From Uiverse.io by reglobby */ 
+.user-profile {
+  width: 131px;
+  height: 51px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  background: linear-gradient(
+    to bottom right,
+    #2e8eff 0%,
+    rgba(46, 142, 255, 0) 30%
+  );
+  background-color: rgba(46, 142, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-profile:hover,
+.user-profile:focus {
+  background-color: rgba(46, 142, 255, 0.7);
+  box-shadow: 0 0 10px rgba(46, 142, 255, 0.5);
+  outline: none;
+}
+
+.user-profile-inner {
+  width: 127px;
+  height: 47px;
+  border-radius: 13px;
+  background-color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.user-profile-inner svg {
+  width: 27px;
+  height: 27px;
+  fill: #fff;
+}
 .logout{
   margin-top: 3rem;
+}
+@media (max-width: 768px) {
+  #footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  #footer div {
+    width: 100%;
+    align-items: center;
+  }
+
+  #footer div p,
+  #footer div p a {
+    font-size: 1rem;
+    padding-left: 0;
+  }
+
+  .flip-card{
+    width: 90%;
+  }
 }
