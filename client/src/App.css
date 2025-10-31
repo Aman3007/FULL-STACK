@@ -1,13 +1,22 @@
-html, body {
+html, body,.app-container  {
   height: 100%;
+  padding: 0;
   margin: 0;
   display: flex;
+  
   flex-direction: column;
+  overflow-x: hidden;
 }
 
-body {
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   overflow-x: hidden;
-  
+}
+
+.main-content {
+  flex: 1;
 }
 
 .navrow{
@@ -38,21 +47,20 @@ text-decoration: none;
 #Navbar {
   background-color: rgb(19, 18, 18);
 }
-
+ 
 #footer{
-    border-top: 2px solid rgb(250, 6, 6);
+  border-top: 2px solid rgb(250, 6, 6); 
   padding: 2rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  bottom: 0;
-  gap: 3rem;
- 
   width: 100%;
- background: #c3228b;
-background: linear-gradient(16deg, rgb(14, 13, 13) 0%, rgb(8, 8, 8) 100%);
+  background: linear-gradient(16deg, rgb(14, 13, 13) 0%, rgb(8, 8, 8) 100%);
+  flex-shrink: 0;
+
 }
+
 #footer div{
   display: flex;
   flex-direction: column;
