@@ -38,7 +38,7 @@ React.js
 
 Axios for API requests
 
-Vanilla CSS and tailwind CSS / Simple UI styling
+Vanilla CSS and Tailwind CSS / Simple UI styling
 
 Project Structure
 whisper-app/
@@ -54,12 +54,13 @@ whisper-app/
 │   ├── controllers/
 │   ├── Model/
 │   ├── Routes/
-|    ├── app.js/
+│   ├── app.js
 │   ├── package.json
 │   └── .env
 └── README.md
 
 Setup & Installation
+
 Prerequisites
 
 Node.js (Express)
@@ -69,9 +70,7 @@ MongoDB Database
 Backend Setup
 
 1️⃣ Navigate to backend folder:
-
 cd backend
-
 
 2️⃣ Install dependencies:
 
@@ -113,7 +112,6 @@ npm start
 
 Frontend runs at: http://localhost:3000
 
-
 How It Works
 
 User authenticates anonymously → Receives JWT token
@@ -126,8 +124,7 @@ JWT handled through secure cookies for protection
 
 Future Enhancements
 
-🔏 Convert into a secure DigiLocker-style platform
-to store personal files & important documents privately
+🔏 Convert into a secure DigiLocker-style platform to store personal files & important documents privately
 
 File-based encrypted storage (Documents, PDFs, etc.)
 
