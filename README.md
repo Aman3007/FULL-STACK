@@ -42,21 +42,37 @@ Vanilla CSS and Tailwind CSS / Simple UI styling
 
 Project Structure
 whisper-app/
+
 ├── client/
+
 │   ├── src/
+
 │   │   ├── App.js
+
 │   │   └── components/
+
 │   ├── public/
+
 │   ├── package.json
+
 │   └── .env
+
 ├── server/
+
 │   ├── middleware/
+
 │   ├── controllers/
+
 │   ├── Model/
+
 │   ├── Routes/
+
 │   ├── app.js
+
 │   ├── package.json
+
 │   └── .env
+
 └── README.md
 
 Setup & Installation
@@ -135,3 +151,4 @@ Two-factor authentication
 Cloud storage integration
 
 Improved UI/UX Themes
+
